@@ -2,26 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.container {
+  background-color: #86EEAC;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+h1 {
+  color: #333;
+  font-size: 2rem;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+form {
+  margin-top: 2rem;
+}
+
+.input {
+  /* display: flex; */
+  /* flex-direction: column; */
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+button {
+  background-color: #008080;
+  color: #fff;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #21c45d;
+}
+
+footer {
+  position: fixed; /* Add this property to fix the footer */
+  bottom: 0; /* Position the footer at the bottom of the window */
+  left: 0; /* Align the footer to the left */
+  right: 0; /* Align the footer to the right */
+  background-color: #38a169; /* Set the background color */
+  padding: 1rem; /* Add some padding */
+  font-size: 1rem;
+  color: #333;
+  text-align: left;
+  width: 100%; /* Ensure the footer takes the full width of the viewport */
 }
