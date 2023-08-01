@@ -36,6 +36,7 @@ export default function Home() {
         </form>
       </main>
 
+        <p className="mt-10 text-3xl text-center">Report Table Coming Soon...</p>
       <footer className="p-4 text-left bg-green-500 mt-10rem">
         &copy; {new Date().getFullYear()} Cookie Stand Admin. All rights reserved.
       </footer>
