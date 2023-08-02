@@ -1,4 +1,5 @@
 import React from 'react';
+import { hours } from './data'; // Make sure to import 'hours' correctly
 
 export default function Table({ data }) {
   const hours = Array.from({ length: 13 }, (_, index) => {
