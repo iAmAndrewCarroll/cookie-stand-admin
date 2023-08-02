@@ -53,3 +53,23 @@ footer {
   text-align: left;
   width: 100%; /* Ensure the footer takes the full width of the viewport */
 }
+
+/* ... Other styles ... */
+
+tr:nth-child(even) {
+  background-color: #6fe7b7; /* Light gray color for even rows */
+}
+
+tr:nth-child(odd) {
+  background-color: #4ad399; /* Lighter gray color for odd rows */
+}
+
+thead tr,
+tfoot tr {
+  background-color: #48bb78; /* Green color for header and footer rows */
+  color: rgb(3, 0, 0); /* White text color for header and footer rows */
+}
+
+.flex.flex-col.sm\:col-span-1 {
+  background-color: #a8f4cf;
+}
