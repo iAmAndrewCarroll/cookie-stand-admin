@@ -30,7 +30,7 @@ export default function CreateForm({ onFormSubmit }) {
 
   return (
     <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4 sm:grid-cols-5">
-      <div className="sm:col-span-5">
+      <div className="grid items-center grid-cols-1 sm:col-span-5">
         <label htmlFor="location" className="block mb-2" style={{ fontFamily: 'Arial' }}>Location</label>
         <input
           type="text"
