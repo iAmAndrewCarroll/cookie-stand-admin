@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { hours } from './data'; // Make sure to import 'hours' correctly
+import { hours } from './data';
 
 import Header from './Header';
 import Head from './Head';
@@ -13,11 +13,17 @@ export default function CookieStandAdmin() {
     setCookieStandData([...cookieStandData, formData]);
   };
 
+  const handleDeleteEntry = (index) => {
+    const newData = [...cookieStandData];
+    newData.splice(index, 1);
+    setCookieStandData(newData);
+  };
+
   return (
     <div>
       <Head />
       <Header />
-      <Main onFormSubmit={handleFormSubmit} data={cookieStandData} />
+      <Main onFormSubmit={handleFormSubmit} data={cookieStandData} onDelete={handleDeleteEntry} />
       <Footer locations={cookieStandData.length} />
     </div>
   );

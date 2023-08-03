@@ -1,13 +1,7 @@
 import React from 'react';
-import { hours } from './data'; // Make sure to import 'hours' correctly
+import { hours } from './data';
 
-export default function Table({ data }) {
-  const hours = Array.from({ length: 13 }, (_, index) => {
-    if (index === 0) return 'Location';
-    else if (index <= 6) return `${index + 5}am`;
-    else return `${index - 7}pm`;
-  });
-
+export default function ReportTable({ data, onDelete }) {
   const calculateTotalCookiesPerHour = (hourIndex) => {
     let total = 0;
     data.forEach((entry) => {
@@ -38,14 +32,12 @@ export default function Table({ data }) {
                 </th>
               ))}
               <th className="font-bold">Totals</th>
+              <th className="font-bold">Actions</th>
             </tr>
           </thead>
           <tbody>
             {data.map((entry, index) => (
-              <tr
-                key={index}
-                className={index % 2 === 0 ? 'bg-gray-100' : 'bg-white'}
-              >
+              <tr key={index} className={index % 2 === 0 ? 'bg-gray-100' : 'bg-white'}>
                 <td className="font-bold">{entry.location}</td>
                 {hours.slice(1).map((_, hourIndex) => (
                   <td key={hourIndex}>
@@ -53,6 +45,19 @@ export default function Table({ data }) {
                   </td>
                 ))}
                 <td>{calculateTotalCookiesPerLocation(entry.location)}</td>
+                <td>
+                  <button onClick={() => onDelete(index)}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-6 h-6 text-red-600"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
@@ -63,6 +68,7 @@ export default function Table({ data }) {
                 <td key={hourIndex}>{calculateTotalCookiesPerHour(hourIndex)}</td>
               ))}
               <td>{calculateTotalCookiesPerHour()}</td>
+              <td></td>
             </tr>
           </tfoot>
         </table>
