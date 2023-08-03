@@ -2,24 +2,18 @@ import React from 'react';
 import CreateForm from './CreateForm';
 import ReportTable from './ReportTable';
 
-export default function Main({ onFormSubmit, data }) {
+export default function Main({ onFormSubmit, data, onDelete }) {
   return (
     <>
       <div className="container p-4 mx-auto">
-        <h2 className="mb-4 text-3xl font-bold text-center" style={{ fontFamily: 'Arial' }}>
-          Create Cookie Stand
-        </h2>
+        <h2 className="mb-4 text-3xl font-bold text-center">Create Cookie Stand</h2>
         <CreateForm onFormSubmit={onFormSubmit} />
       </div>
 
-      {/* Render the table only if there is data */}
       {data.length > 0 ? (
-        <ReportTable data={data} />
+        <ReportTable data={data} onDelete={onDelete} />
       ) : (
-        // Show the "No Cookie Stands Available..." message when there is no data
-        <p className="mt-4 text-3xl text-center" style={{ fontFamily: 'Arial' }}>
-          No Cookie Stands Available...
-        </p>
+        <p className="mt-4 text-3xl text-center">No Cookie Stands Available...</p>
       )}
     </>
   );
