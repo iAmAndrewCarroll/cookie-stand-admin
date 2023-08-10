@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { hours } from '../Data';
-
 import Header from './Header';
 import Head from './Head';
 import Footer from './Footer';
