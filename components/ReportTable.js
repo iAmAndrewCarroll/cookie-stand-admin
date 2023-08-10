@@ -1,5 +1,5 @@
 import React from 'react';
-import { hours } from './data';
+import { hours } from '../Data';
 
 export default function ReportTable({ data, onDelete }) {
   const calculateTotalCookiesPerHour = (hourIndex) => {
